@@ -1,0 +1,208 @@
+@use '../abstract' as *;
+
+/*----------------------------------------*/
+/*  10. PRODUCT CSS START
+/*----------------------------------------*/
+
+.product{
+    &__sm{
+        padding: 20px;
+        & ul{
+            & li{
+                display: flex;
+                margin-bottom: 20px;
+            }
+        }
+        &-thumb{
+            & img{
+                width: 85px;
+                height: 100px;
+            }
+        }
+        &-content{
+            & h5{
+                font-size: 14px;
+                margin-bottom: 0px;
+                font-weight: 500;
+                & a{
+                    &:hover{
+                        color: $e-blue;
+                    }
+                }
+            }
+        }
+        &-price{
+            color: $e-blue;
+            font-weight: 500;
+            &-wrapper{
+                & span{
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+.cartmini{
+    &__area{
+        position: relative;
+    }
+    &__wrapper{
+        position: fixed;
+        right: -360px;
+        top: 0;
+        width: 340px;
+        height: 100%;
+        background: $white;
+        -webkit-transition: all 600ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
+        -moz-transition: all 600ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
+        -ms-transition: all 600ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
+        -o-transition: all 600ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
+        transition: all 600ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
+        @include box-shadow(-5px 0 20px -5px rgba(0, 0, 0, 0.5));
+		z-index: 9999;
+		overflow: hidden;
+		&.opened{
+			right: 0px;
+		}
+    }
+    &__title{
+        padding: 20px 20px;
+		border-bottom: 1px solid $border;
+        box-shadow: 0 0 10px 0 rgba(129,129,129,.2);
+		& h4{
+			font-size: 16px;
+			text-transform: uppercase;
+			font-weight: 600;
+			margin-bottom: 0;
+		}
+    }
+	&__close{
+		position: absolute;
+		top: 17px;
+		right: 20px;
+		&-btn{
+			background: transparent;
+			color: $black;
+			font-size: 22px;
+			&:hover{
+				@include transform(rotate(90deg));
+			}
+		}
+	}
+    &__widget{
+        overflow-y: scroll;
+        height: 100%;
+    }
+    &__inner{
+        & ul{
+            & li{
+                position: relative;
+                display: flex;
+                padding: 20px;
+                padding-right: 35px;
+                border-bottom: 1px solid rgba(129,129,129,.2);
+                transition: background-color .3s;
+                &:hover{
+                    background: #F9F9F9;
+                }
+            }
+        }
+    }
+    &__thumb{
+        margin-right: 15px;
+        & img{
+            width: 70px;
+            height: 90px;
+        }
+    }
+    &__content{
+        & h5{
+            font-size: 13px;
+            margin-bottom: 12px;
+            font-weight: 500;
+            & a{
+                &:hover{
+                    color: $e-blue;
+                }
+            }
+        }
+
+    }
+    &__del{
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 25px;
+        height: 25px;
+        line-height: 25px;
+        text-align: center;
+        color: $black;
+        font-size: 12px;
+        background: transparent;
+        @include border-radius(50%);
+        &:hover{
+            background: $white;
+        }
+    }
+    &__checkout{
+        padding: 20px;
+        padding-bottom: 85px;
+        width: 100%;
+        background: $white;
+        border-top: 2px solid $border;
+        &-title{
+            & h4{
+                font-size: 18px;
+                display: inline-block;
+                font-weight: 600;
+                margin-bottom: 0;
+            }
+            & span{
+                float: right;
+                font-size: 20px;
+                color: $black;
+                font-weight: 600;
+                color: $e-blue;
+            }
+        }
+    }
+}
+
+
+.cart-plus,
+.cart-minus{
+    width: 25px;
+    height: 30px;
+    border: 2px solid $border;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 14px;
+    &:hover{
+        cursor: pointer;
+        color: $white;
+        background: $e-blue;
+        border-color: $e-blue;
+    }
+}
+
+.cart-input{
+    height:30px;
+    width: 32px;
+    text-align: center;
+    font-size: 14px;
+    border: none;
+    border-top: 2px solid $border;
+    border-bottom: 2px solid $border;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 -3px;
+    padding-bottom: 0px;
+    &:focus{
+        outline: none;
+    }
+} 
